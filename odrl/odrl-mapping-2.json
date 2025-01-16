@@ -1,0 +1,64 @@
+{
+  "@context": {
+    "odrl": "http://www.w3.org/ns/odrl.jsonld",
+    "licenseFramework": {
+      "@id": "http://ishare.eu/licenses",
+      "@type": "@id"
+    }
+  },
+  "version": "2.1",
+  "@graph": [
+    {
+      "@type": "Policy",
+      "@id": "http://ishare.eu/licenses/2.1/general/0000",
+      "permission": [
+        {
+          "action": [
+            "http://www.w3.org/ns/odrl/2/use",
+            "http://www.w3.org/ns/odrl/2/distribute"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Policy",
+      "@id": "http://ishare.eu/licenses/2.1/general/0001",
+      "permission": [
+        {
+          "action": [
+            "http://www.w3.org/ns/odrl/2/use"
+          ]
+        },
+        {
+          "action": [
+            "http://www.w3.org/ns/odrl/2/distribute"
+          ],
+          "constraint": {
+            "leftOperand": {
+              "@id": "http://www.w3.org/ns/odrl/2/assignee"
+            },
+            "operator": {
+              "@id": "http://www.w3.org/ns/odrl/2/eq"
+            },
+            "rightOperand": {
+              "@type": "http://www.w3.org/2001/XMLSchema#string",
+              "@value": "AdheringParties"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Policy",
+      "@id": "http://ishare.eu/licenses/2.1/general/0002",
+      "permission": [
+        {
+          "action": [
+            "http://www.w3.org/ns/odrl/2/use"
+          ]
+        }
+      ]
+    }
+  ],
+  "licenseFramework": "http://ishare.eu/licenses"
+}
